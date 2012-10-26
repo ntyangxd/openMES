@@ -4,11 +4,11 @@
       = link_to '设备管理系统', root_path, :class=>'brand'
       %ul.nav
         %li.active
-          = link_to '设备', root_path
+          = link_to '设备管理', root_path
         %li
-          = link_to '制造', root_path
+          = link_to '制造管理', root_path
         %li
-          = link_to '品质', root_path
+          = link_to '品质管理', root_path
         %li.dropdown
           %a.dropdown-toggle{'data-toggle'=>"dropdown", :href=>'#'}
             系统管理
@@ -41,5 +41,16 @@
           %li= link_to '设备', root_path
           %li= link_to '故障', root_path
     .span10
+      %ul.breadcrumb
+        %li
+          =link_to 'Home', root_path
+          %span.divider
+            = "/"
+        %li
+          =link_to 'Room', root_path
+          %span.divider
+            = "/"
+        %li.active Data
+
       .hero-unit
         a
