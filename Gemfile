@@ -5,11 +5,22 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'activerecord-jdbcmysql-adapter'
 
-gem 'jruby-openssl'
+# 以下为jruby所用
+# gem 'activerecord-jdbcmysql-adapter'
+# gem 'jruby-openssl'
+
+# 以下为cruby所用
+gem 'mysql2'
+
+# 通用
 gem 'json'
 gem 'haml'
+gem 'pry', :group => :development
+gem 'thin'
+gem 'will_paginate'
+# gem 'anjlab-bootstrap-rails'
+# gem 'bootstrap_helper'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +32,8 @@ group :assets do
   gem 'therubyrhino'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-will_paginate'
 end
 
 gem 'jquery-rails'

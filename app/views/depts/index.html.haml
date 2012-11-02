@@ -1,0 +1,25 @@
+%h2 部门列表
+
+%table.table.table-striped.table-hover.table-bordered
+  %thead
+    %tr
+      %th #
+      %th 代码
+      %th 名称
+      %th 负责人
+      %th 备注
+      %th= link_to raw('<i class="icon-new"></i>'), new_dept_path
+  %tbody
+    - @depts.each do |dept|
+      %tr
+        %td= dept.id
+        %td= dept.code
+        %td= dept.name
+        %td= dept.person
+        %td= dept.memo
+        %td
+          =link_to raw('<i class="icon-edit"></i>'), edit_dept_path(dept)
+          =link_to raw('<i class="icon-zoom-in"></i>'), dept_path(dept)
+          =link_to raw('<i class="icon-remove"></i>'), dept_path(dept), :method => :delete
+
+= will_paginate @depts, :previous_label => '<', :next_label => '>'

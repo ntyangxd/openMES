@@ -1,6 +1,8 @@
 OpenMES::Application.routes.draw do
   root :to => 'welcome#index'
 
+  resources :depts
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

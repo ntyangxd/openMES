@@ -1,0 +1,27 @@
+= form_for @dept, :html=>{:class=>'form-horizontal'} do |f|
+
+  %legend= title
+
+  .control-group
+    = f.label '代码', :class=>'control-label'
+    .controls
+      = f.text_field :code, :class=> 'span6'
+
+  .control-group
+    = f.label '名称', :class=>'control-label'
+    .controls
+      = f.text_field :name, :class => 'span8'
+
+  .control-group
+    = f.label '负责人', :class=>'control-label'
+    .controls
+      = f.text_field :person, :class => 'span8'
+
+  .control-group
+    = f.label '备注', :class=>'control-label'
+    .controls
+      = f.text_area :memo, :size => '160x10', :class=> "span8"
+
+  .control-group
+    .controls
+      = f.submit :class => 'btn'

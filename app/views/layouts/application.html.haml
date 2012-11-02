@@ -1,10 +1,32 @@
 !!!
 %html
   %head
-    %title FTS设备管理 2012
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "application"
+    %title
+      = content_for?(:title) ? yield(:title) : 'FTS设备管理 2012'
     = csrf_meta_tags
+    = stylesheet_link_tag "application", :media => "all"
   %body
-    = yield
+    = render '/layouts/header'
+    .container-fluid
+      .row-fluid
+        .span2
+          = render '/layouts/sidebar'
+        .span10
+          %ul.breadcrumb
+            %li
+              =link_to 'Home', root_path
+              %span.divider
+                = "/"
+            %li
+              =link_to 'Room', root_path
+              %span.divider
+                = "/"
+            %li.active Data
+
+          = yield
+
+  %footer
+    %p Ferrotec Shanghai
+
+  = javascript_include_tag "application"
 
