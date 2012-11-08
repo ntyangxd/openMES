@@ -19,8 +19,12 @@
             %li= link_to '权限设置', root_path
 
       %ul.nav.pull-right
-        %li
-          = link_to '登录', root_path
-        %li
-          = link_to '注销', root_path
+        - if current_user
+          %li
+            = current_user.name
+          %li
+            = link_to '注销', logout_path
+        - else
+          %li
+            = link_to '登录', login_path
 

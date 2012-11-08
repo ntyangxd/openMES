@@ -19,8 +19,8 @@ gem 'haml'
 gem 'pry', :group => :development
 gem 'thin'
 gem 'will_paginate'
-# gem 'anjlab-bootstrap-rails'
-# gem 'bootstrap_helper'
+gem 'bootstrap-will_paginate'
+gem 'bcrypt-ruby',  :require => 'bcrypt'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,7 +33,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'twitter-bootstrap-rails'
-  gem 'bootstrap-will_paginate'
 end
 
 gem 'jquery-rails'

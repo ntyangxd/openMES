@@ -1,0 +1,38 @@
+%h1 新增用户
+
+= form_for @user, :html=>{:class=>'form-horizontal'} do |f|
+  - if @user.errors.any?
+    .error_messages
+      %h2 发现以下错误
+      %ul
+        - for message in @user.errors.full_messages
+          %li= message
+
+  .control-group
+    = f.label '员工号', :class=>'control-label'
+    .controls
+      = f.text_field :code, :class=>'span6'
+
+  .control-group
+    = f.label '姓名', :class=>'control-label'
+    .controls
+      = f.text_field :name, :class=>'span6'
+
+  .control-group
+    = f.label '电子邮件', :class=>'control-label'
+    .controls
+      = f.text_field :email, :class=>'span6'
+
+  .control-group
+    = f.label '密码', :class=>'control-label'
+    .controls
+      = f.password_field :password, :class=>'span6'
+
+  .control-group
+    = f.label '密码确认', :class=>'control-label'
+    .controls
+      = f.password_field :password_confirmation, :class=>'span6'
+
+  .control-group
+    .controls
+      = f.submit :class=>'btn'

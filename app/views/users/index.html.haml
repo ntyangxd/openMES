@@ -1,0 +1,25 @@
+%h2 人员列表
+
+%table.table.table-striped.table-hover.table-bordered
+  %thead
+    %tr
+      %th #
+      %th 员工号
+      %th 姓名
+      %th 邮箱地址
+      %th 所属部门
+      %th= link_to raw('<i class="icon-plus"></i>'), new_user_path
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.id
+        %td= user.code
+        %td= user.name
+        %td= user.email
+        %td= user.id
+        %td
+          =link_to raw('<i class="icon-edit"></i>'), edit_user_path(user)
+          =link_to raw('<i class="icon-zoom-in"></i>'), user_path(user)
+          =link_to raw('<i class="icon-remove"></i>'), user_path(user), :method => :delete
+
+= will_paginate @depts, :previous_label => '<', :next_label => '>'

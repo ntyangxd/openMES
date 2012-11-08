@@ -1,7 +1,10 @@
 OpenMES::Application.routes.draw do
   root :to => 'welcome#index'
 
-  resources :depts
+  get "login" => "sessions#new"
+  get "logout" => "sessions#destroy"
+
+  resources :depts, :users, :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
